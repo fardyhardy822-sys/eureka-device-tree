@@ -1,0 +1,12 @@
+# mount point   fstype  device                                      flags
+/system         ext4    system                                      slotselect,logical,first_stage_mount
+/system_ext     ext4    system_ext                                  slotselect,logical,first_stage_mount
+/vendor         ext4    vendor                                      slotselect,logical,first_stage_mount
+/odm            ext4    odm                                         slotselect,logical,first_stage_mount
+/product        ext4    product                                     slotselect,logical,first_stage_mount
+/vendor_dlkm    ext4    vendor_dlkm                                 slotselect,logical,first_stage_mount
+/odm_dlkm       ext4    odm_dlkm                                    slotselect,logical,first_stage_mount
+/metadata       ext4    /dev/block/by-name/metadata                 formattable,first_stage_mount
+/data           ext4    /dev/block/bootdevice/by-name/userdata      fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption,quota
+/persist        ext4    /dev/block/bootdevice/by-name/persist       flags=display="Persist"
+/misc           emmc    /dev/block/bootdevice/by-name/misc
