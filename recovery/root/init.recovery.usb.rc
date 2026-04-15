@@ -1,0 +1,15 @@
+on init
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller "a600000.dwc3"
+    setprop persist.ovr.usb.xrsp_enabled 0
+    setprop sys.usb.config adb
+
+on property:sys.usb.config=adb
+    write /config/usb_gadget/g1/UDC ""
+    rm /config/usb_gadget/g1/configs/b.1/function0
+    rm /config/usb_gadget/g1/configs/b.1/function1
+    write /config/usb_gadget/g1/idVendor 0x2833
+    write /config/usb_gadget/g1/idProduct 0x5013
+    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/function0
+    write /config/usb_gadget/g1/UDC "a600000.dwc3"
+    setprop sys.usb.state adb

@@ -1,0 +1,7 @@
+ro.debuggable=1
+ro.force.debuggable=1
+ro.adb.secure=0
+persist.sys.usb.config=adb
+sys.usb.config=adb
+sys.usb.state=adb
+sys.usb.configfs=1
