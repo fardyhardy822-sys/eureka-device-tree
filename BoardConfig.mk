@@ -27,12 +27,10 @@ BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
 # Boot header v4 (Android 13+)
 BOARD_BOOT_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 # Vendor boot (TWRP goes here on A/B devices)
 BOARD_VENDOR_BOOT_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_ARGS += --vendor_boot_header_version $(BOARD_VENDOR_BOOT_HEADER_VERSION)
 BOARD_USES_VENDOR_BOOTIMAGE := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
